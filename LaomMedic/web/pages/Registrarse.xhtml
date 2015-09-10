@@ -16,7 +16,7 @@
    
     <body>
         <ui:define name="content">
-        <form action="" class="form-re">
+            <form  autocomplete="on" class="form-re">
             <label>Primer Nombre</label>
             <input type="text"
                    jsf:id="PrimerNombre"
@@ -38,15 +38,16 @@
                    required="false"
                    jsf:value="#{usuarioController.currentUsuario.segundoApellido}"/>
              <label>Documento de identidad</label>
-            <input type="text" 
+            <input type="number" 
                    jsf:id="idIdentificacion"
                    required="#{usuarioController.currentUsuario.idIdentificacion}"/>
             <label>Fecha de nacimiento</label>
             <input type="date" 
                    jsf:id="FechaNacimiento"
                    required="true"
-                   jsf:value="#{usuarioController.currentUsuario.fechaNacimiento}"/>
+                   jsf:value="#{usuarioController.currentUsuario.fechaNacimiento}">
             <f:convertDateTime pattern="yyyy-MM-dd"/>
+            </input>
             <label>Grupo sanguineo</label>
             <select jsf:id="grupoSanguineo"
                     size="1"
@@ -100,11 +101,59 @@
             <input type="date"
                    jsf:id="FechaIngreso"
                    required="true"
-                   jsf:value="#{usuarioController.currentUsuario.fechaIngreso}"/>
+                   jsf:value="#{usuarioController.currentUsuario.fechaIngreso}">
             <f:convertDateTime pattern="yyyy-MM-dd"/>
-            <input type="submit" 
-                   value="Registrarse" 
-                   jsf:action="#{usuarioController.create}" />               
+            </input>
+            <select jsf:value="#{usuarioController.ciudad}"
+                    required="true"
+                    size="1">
+                <f:selectItem itemLabel="Ciudad"/>
+                <f:selectItems value="#{ciudadController.itemsCiudad}"
+                               var="ciudad"
+                               itemLabel="#{ciudad.nombre}"
+                               itemValue="#{ciudad.idCiudad},#{ciudad.departamento.idDepartamento}"/>
+            </select>
+            <select jsf:value="#{usuarioController.idRol}"
+                        required="true"
+                        size="1">
+                    <f:selectItem itemLabel="Rol"/>
+                    <f:selectItems value="#{rolController.itemsRol}"
+                                   var="rol"
+                                   itemLabel="#{rol.nombreRol}"
+                                   itemValue="#{rol.idRoles}"/>
+                </select>
+            <select jsf:value="#{usuarioController.idEntidad}"
+                        required="true"
+                        size="1">
+                    <f:selectItem itemLabel="Entidad"/>
+                    <f:selectItems value="#{entidadController.ittemsEntidad}"
+                                   var="entidad"
+                                   itemLabel="#{entidad.nombreEntidad}"
+                                   itemValue="#{entidad.idEntidad}"/>
+            </select>
+            <select jsf:value="#{usuarioController.idTipoDocumento}"
+                        required="true"
+                        size="1">
+                    <f:selectItem itemLabel="Tipo Documento"/>
+                    <f:selectItems value="#{tipoDocumentoController.itemsTipoDocumento}"
+                                   var="tipoDocumento"
+                                   itemLabel="#{tipoDocumento.nombre}"
+                                   itemValue="#{tipoDocumento.idTipoDocumento}"/>
+            </select>
+            <select jsf:value="#{usuarioController.idOcupacion}"
+                        required="true"
+                        size="1">
+                    <f:selectItem itemLabel="Ocupacion"/>
+                    <f:selectItems value="#{ocupacionController.itemsOcupacion}"
+                                   var="ocupacion"
+                                   itemLabel="#{ocupacion.nombreOcupacion}"
+                                   itemValue="#{ocupacion.idOcupacion}"/>
+                </select>
+            <button type="submit"
+                    jsf:action="List"
+                    jsf:actionListener="#{usuarioController.create()}">
+                Registrar
+            </button>    
         </form>
             </ui:define> 
     </body>

@@ -6,6 +6,7 @@
 package com.example.laommedic.jsf.controllers;
 
 import com.example.laommedic.jpa.entities.Ciudad;
+import com.example.laommedic.jpa.entities.Departamento;
 import com.example.laommedic.jpa.sessions.CiudadSession;
 import java.io.Serializable;
 import java.util.List;
@@ -38,17 +39,17 @@ public class CiudadController implements Serializable {
         }
         return currentCiudad;
     }
-
-    public void setCurrentCiudad(Ciudad currentCiudad) {
-        this.currentCiudad = currentCiudad;
-    }
-
-    public int getIdDepartamento() {
+    
+     public int getIdDepartamento() {
         return idDepartamento;
     }
 
     public void setIdDepartamento(int idDepartamento) {
         this.idDepartamento = idDepartamento;
+    }
+
+    public void setCurrentCiudad(Ciudad currentCiudad) {
+        this.currentCiudad = currentCiudad;
     }
 
     public CiudadSession getCiudadSession() {
@@ -68,6 +69,7 @@ public class CiudadController implements Serializable {
     
     public void create() {
         try {
+            currentCiudad.setDepartamento(new Departamento(idDepartamento));
             getCiudadSession().create(currentCiudad);
         } catch (Exception ex) {
             System.err.println(ex.getMessage());

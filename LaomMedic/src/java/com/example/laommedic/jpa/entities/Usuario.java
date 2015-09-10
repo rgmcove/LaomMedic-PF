@@ -48,6 +48,7 @@ public class Usuario implements Serializable {
     
     @Size(max =25)
     @Column(name= "segundo_nombre")
+    @Basic(optional = true)
     private String segundoNombre;
     
     @Column(name = "primer_apellido")
@@ -57,6 +58,7 @@ public class Usuario implements Serializable {
     
     @Column(name = "segundo_apellido")
     @Size(max =25)
+    @Basic(optional = true)
     private String segundoApellido;
     
     @Column(name = "fecha_nacimiento")
