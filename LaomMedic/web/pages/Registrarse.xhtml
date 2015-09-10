@@ -5,15 +5,17 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:jsf="http://xmlns.jcp.org/jsf"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
+      <ui:composition template="../WEB-INF/Template.xhtml">
+         
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>Registrarse</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-          <ui:composition template="WEB-INF/Template.xhtml">
+        
     </head>
    
     <body>
-         
+        <ui:define name="content">
         <form action="" class="form-re">
             <label>Primer Nombre</label>
             <input type="text"
@@ -36,12 +38,12 @@
                    required="false"
                    jsf:value="#{usuarioController.currentUsuario.segundoApellido}"/>
              <label>Documento de identidad</label>
-            <input type="number" 
+            <input type="text" 
                    jsf:id="idIdentificacion"
                    required="#{usuarioController.currentUsuario.idIdentificacion}"/>
             <label>Fecha de nacimiento</label>
             <input type="date" 
-                   jsf:id="Fecha de nacimineto"
+                   jsf:id="FechaNacimiento"
                    required="true"
                    jsf:value="#{usuarioController.currentUsuario.fechaNacimiento}"/>
             <f:convertDateTime pattern="yyyy-MM-dd"/>
@@ -69,7 +71,7 @@
             <input type="email" 
                    jsf:id="Email"
                    required="true"
-                   jsf:value#{usuarioController.currentUsuario.email}/>
+                   jsf:value="#{usuarioController.currentUsuario.email}"/>
             <label>Password</label>
             <input type="text" 
                    jsf:id="Password"
@@ -104,6 +106,7 @@
                    value="Registrarse" 
                    jsf:action="#{usuarioController.create}" />               
         </form>
+            </ui:define> 
     </body>
       </ui:composition>
 </html>

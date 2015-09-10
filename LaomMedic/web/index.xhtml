@@ -3,46 +3,61 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:jsf="http://xmlns.jcp.org/jsf">
     <head jsf:id="header">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>Laom Medic</title>
         <link rel="stylesheet" href="resource/css/style.css"></link>
-        <link rel="stylesheet" type="text/css" href="resource/css/normalize.css"></link>
+        <link rel="stylesheet" type="text/css" href="resource/css/normalize.css"></link>     
     </head>
+    
     <body jsf:id="body">
         <header class="header">
             <figure class="ImageContainer">
                 <img class="Image" src="resource/image/logo.png" width="300px" height="150px" alt="logo"></img>
+   
             </figure>
         </header>
         <section>
-            <div class="Galeria"></div>
+            <div class="Gallery"></div>
         </section>
-        <section>
-            <div class="contenedor">
+        <section class="containerGlobal">
+            <div class="container">
                 <div class="lateral">
                     <ul class="lateral1">
-                        <li class="lateral-2"><a href="Registrarse.xhtml">Registrarse</a></li>
-                        <li class="lateral-2"><a href="Ingresar.xhtml">Ingresar</a></li>
+                        <li class="lateral-2"><a jsf:outcome="pages/Registrarse.xhtml">Registrarse</a></li>
+                        <li class="lateral-2"><a jsf:outcome="pages/Ingresar.xhtml">Ingresar</a></li>
                     </ul>
                 </div>
-                <div class="principal">
+                <section class="Tips">
                     <h2>Tips</h2>
+                    <article class="Tip-1">
+                        <div>    
                     <p>
                      Muchos yesos y férulas no son impermeables, por lo tanto, es muy importante conservarlos secos.
                      Cúbrelo con una bolsa plástica o una manga impermeable especial para tomar duchas o baños. 
                      Si el yeso se moja, es posible que pierda su resistencia y no sea capaz de conservar el hueso lesionado en su lugar. 
                      Si el yeso o la férula se moja, comuníquese inmediatamente con el médico. 
                     </p>
+                            </div>
+                    </article>   
+                    <article class="Tip-2">
+                        <div>
                     <p>
                      No modifiques el yeso. Si bien es aceptable que los amigos y la familia
                      decoren y firmen el yeso, no se debe retirar el revestimiento interno
                      de algodón ni quitar partes del yeso.   
                     </p>
+                     </div>
+                    </article>
+                    <article class="Tip-3">
+                        <div>
                     <p>
                       Si tienes alguna fractura lo mejor es guardar reposo y tener paciencia para que el hueso solde adecuadamente,
                       ya que cualquier movimiento en falso hará más lenta tu recuperación.
                       ¡Buena suerte!  
                     </p>
-                </div>
+                        </div>
+                        </article>
+                </section>
             </div>
         </section>
         
