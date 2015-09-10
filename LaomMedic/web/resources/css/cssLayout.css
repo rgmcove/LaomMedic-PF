@@ -1,0 +1,59 @@
+
+.header {
+    background-image:url(../image/header.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 10em;
+    margin-top: 0;
+    padding: 1.2em;
+    text-align: center;   
+}
+
+.footer{
+    background-image:url(../image/footer.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 0;
+    padding: 3.5em;
+    text-align: center;   
+}
+
+.Footer-formInput,
+.Footer-textArea{
+    background: silver;
+    border-radius: 2em;
+    border: blue;
+    display: block;
+    margin: 0 auto 1em;
+    padding: .5em;
+}
+
+.Footer-button{
+    background: black;
+    color: silver;
+    border-radius: 1em;
+    border: blue;
+    padding: .5em 1em;
+    margin-left: 2em;
+    display: inline-block;
+}
+.Footer-lefts{
+    display: inline-block;
+}
+
+.Footer-description{
+    display: inline-block;
+    max-width: 15em;
+    margin-left: 2em;
+    float: left;
+}
+.Footer-form{
+    display: inline-block;
+    float: right;
+
+}
+
+
+

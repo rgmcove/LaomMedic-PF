@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>Registrarse</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+     <ui:composition template="WEB-INF/Template.xhtml"></ui:composition>
+    <body>
+         <ui:define name="top"></ui:define> 
+        <form action="" class="form-re">
+            <input type="text"
+                   jsf:id="Primer Nombre"
+                   required="true"
+                   jsf:value="#{usuarioController.currentUsuario.primerNombre}"/>
+            <input type="text"
+                   jsf:id="Segundo Nombre"
+                   required="false"
+                   jsf:value="#{usuarioController.currentUsuario.segundoNombre}"/>
+            <input type="text"
+                   jsf:id="Primer Apellido"
+                   required="true"
+                   jsf:value="#{usuarioController.currentUsuario.primerApellido}"/>
+             <input type="text"
+                   jsf:id="Segundo Apellido"
+                   required="false"
+                   jsf:value="#{usuarioController.currentUsuario.segundoApellido}"/>
+            <input type="number" 
+                   jsf:id="Numero de documento de identidad"
+                   required="#{usuarioController.currentUsuario.idIdentificacion}"/>
+            <input type="text" 
+                   jsf:id="Fecha de nacimineto"
+                   required="true"
+                   jsf:value="#{usuarioController.currentUsuario.fechaNacimiento}"/>
+            <input type="text" placeholder="Tipo de sangre"/>
+            <input type="email" 
+                   jsf:id="Email"
+                   required="true"
+                   jsf:value#{usuarioController.currentUsuario.email}/>
+            <input type="text" 
+                   jsf:id="Password"
+                   required="true"
+                   jsf:value="#{usuarioController.currentUsuario.password}"/>
+            <input type="text" 
+                   jsf:id="Direccion"
+                   required="true"
+                   jsf:value="#{usuarioController.currentUsuario.direccion}"/>
+            <input type="tel" 
+                   jsf:id="Telefono"
+                   required="true"
+                   jsf:value="#{usuarioController.currentUsuario.telefono}"/>
+            <select jsf:id="Sexo"
+                    size="1"
+                    required="true"
+                    jsf:value="#{usuarioController.currentUsuario.sexo}">
+                <f:selectItem itemLabel="Seleccione uno..."/>
+                <f:selectItem itemLabel="Masculino" itemValue="M"/>
+                <f:selectItem itemLabel="Femenino" itemValue="f"/>
+            </select>
+            <input type="submit" 
+                   value="Registrarse" 
+                   jsf:action="#{usuarioController.create}" />               
+        </form>
+    </body>
+       <ui:define name="bottom"></ui:define>
+</html>

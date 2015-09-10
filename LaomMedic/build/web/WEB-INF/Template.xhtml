@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="./css/default.css"/>
+        <h:outputStylesheet name="./css/cssLayout.css"/>
+        <title>Facelets Template</title>
+    </h:head>
+
+    <h:body>
+
+        <div id="top">
+            <ui:insert name="top">
+              <header class="header">
+            <figure class="ImageContainer">
+                <img class="Image" src="resource/image/logo.png" width="300px" height="150px" alt="logo"></img>
+            </figure>
+        </header>
+            </ui:insert>
+        </div>
+
+        <div id="content" class="center_content">
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+
+        <div id="bottom">
+            <ui:insert name="bottom">
+                 <footer class="footer">
+            <div class="Footer-description">
+                <h3 class="Footer-title ">¿Quienes somos?</h3>
+                <p>
+                    Somos una asociacion creada para mejorar la 
+                    rapidez y estabilidad de los sistemas de gestion de
+                    citas de la clinicas fisioterapeuticas.
+                </p> 
+            </div>
+                <div class="Footer-lefts">
+                    <figure class="Work-imageContainer">
+                        <img class="Work-image" src="resource/image/logo.png" width="250px" height="120px" ></img>
+                        <figcaption class="Work-description"></figcaption>
+                    </figure>
+                </div>
+    
+                 <form action="" class="Footer-form">
+                <input type="text" placeholder="Nombre" class="Footer-formInput"/>
+                <input type="email" placeholder="Email" class="Footer-formInput"/>
+                <textarea placeholder="Motivo" class="Footer-textArea"></textarea>
+                <button type="submit" class="Footer-button">Contactanos</button>
+            </form>           
+
+           
+        </footer>
+            </ui:insert>
+        </div>
+
+    </h:body>
+
+</html>
