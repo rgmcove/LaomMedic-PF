@@ -25,7 +25,7 @@ import javax.validation.constraints.Size;
  * @author Rubén.Gómez
  */
 @Entity
-@Table(name = "CIUDADADES")
+@Table(name = "CIUDADADES1")
 @IdClass(value = CiudadPK.class)
 public class Ciudad implements Serializable {
     
