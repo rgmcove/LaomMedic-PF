@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Ingresar</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+         <ui:composition template="WEB-INF/Template.xhtml">
+    </head>
+    <body>
+        <ui:define name="top"></ui:define>
+        <form action="" class="form-in">
+            <label>Usuario</label> 
+           <input type="number" 
+                   jsf:id="idIdentificacion"
+                   required="#{usuarioController.currentUsuario.idIdentificacion}"/>
+             <label>Password</label>
+            <input type="text" 
+                   jsf:id="Password"
+                   required="true"
+                   jsf:value="#{usuarioController.currentUsuario.password}"/>
+            <input type="submit" value="Validar" name="Ingresar" />
+        </form>     
+    </body>
+      </ui:composition>
+</html>

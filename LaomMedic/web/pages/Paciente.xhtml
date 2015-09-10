@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
+    <head>
+         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Paciente</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+         <ui:composition template="WEB-INF/Template.xhtml">
+    </head>
+    <body> 
+        <section class="interfazPaciente">
+            <ul class="interfazItems">
+                <li class="crearCita"><a jsf:outcome="pages/CrearCita.xhtml">Crear cita</a></li>  
+                <li class="confirmarCita"><a jsf:outcome="pages/Confirmar cita">Confirmar cita</a></li>
+                <li class="modificarCita"><a jsf:outcome="pages/Modifacar/Eliminar">Modificar/Eliminar cita</a></li>
+                <li class="cerrarSesion"><a jsf:outcome="pages/index.xhtml">Cerrar sesión</a></li>
+            </ul>         
+        </section>
+    </body>
+    </ui:composition>
+</html>

@@ -11,7 +11,7 @@ body{
     padding: 1.2em;
     text-align: center;   
 }
-.Galeria{
+.Gallery{
     width: 700px;
     height: 350px;
     background-size: 400px 200px;
@@ -58,7 +58,7 @@ a{
     color: #3333cc; 
    text-decoration: none; 
 }
-.principal{
+.Tips{
    margin-left: 15px; 
    background-color: bisque; 
    padding:4px;

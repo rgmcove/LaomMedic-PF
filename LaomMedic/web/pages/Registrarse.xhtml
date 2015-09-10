@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Registrarse</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+          <ui:composition template="WEB-INF/Template.xhtml">
+    </head>
+   
+    <body>
+         
+        <form action="" class="form-re">
+            <label>Primer Nombre</label>
+            <input type="text"
+                   jsf:id="PrimerNombre"
+                   required="true"
+                   jsf:value="#{usuarioController.currentUsuario.primerNombre}"/>
+            <label>Segundo Nombre</label>
+            <input type="text"
+                   jsf:id="SegundoNombre"
+                   required="false"
+                   jsf:value="#{usuarioController.currentUsuario.segundoNombre}"/>
+            <label>Primer Apellido</label>
+            <input type="text"
+                   jsf:id="PrimerApellido"
+                   required="true"
+                   jsf:value="#{usuarioController.currentUsuario.primerApellido}"/>
+            <label>Segundo Apellido</label>
+             <input type="text"
+                   jsf:id="SegundoApellido"
+                   required="false"
+                   jsf:value="#{usuarioController.currentUsuario.segundoApellido}"/>
+             <label>Documento de identidad</label>
+            <input type="number" 
+                   jsf:id="idIdentificacion"
+                   required="#{usuarioController.currentUsuario.idIdentificacion}"/>
+            <label>Fecha de nacimiento</label>
+            <input type="date" 
+                   jsf:id="Fecha de nacimineto"
+                   required="true"
+                   jsf:value="#{usuarioController.currentUsuario.fechaNacimiento}"/>
+            <f:convertDateTime pattern="yyyy-MM-dd"/>
+            <label>Grupo sanguineo</label>
+            <select jsf:id="grupoSanguineo"
+                    size="1"
+                    required="true"
+                    jsf:value="#{usuarioController.currentUsuario.grupoSanguineo}">
+                <f:selectItem itemValue="Seleccione uno..."/>
+                <f:selectItem itemValue="A"/>
+                <f:selectItem itemValue="B"/>
+                <f:selectItem itemValue="AB"/>
+                <f:selectItem itemValue="O"/>
+            </select>
+            <label>RH</label>
+            <select jsf:id="rh"
+                    size="1"
+                    required="true"
+                    jsf:value="#{usuarioController.currentUsuario.rh}">
+                  <f:selectItem itemValue="Seleccione uno..."/>
+                  <f:selectItem itemValue="Positivo" itemLabel="+"/>
+                  <f:selectItem itemValue="Negativo" itemLabel="-"/>
+            </select>
+            <label>Email</label>
+            <input type="email" 
+                   jsf:id="Email"
+                   required="true"
+                   jsf:value#{usuarioController.currentUsuario.email}/>
+            <label>Password</label>
+            <input type="text" 
+                   jsf:id="Password"
+                   required="true"
+                   jsf:value="#{usuarioController.currentUsuario.password}"/>
+            <label>Dirección</label>
+            <input type="text" 
+                   jsf:id="Direccion"
+                   required="true"
+                   jsf:value="#{usuarioController.currentUsuario.direccion}"/>
+            <label>Telefono</label>
+            <input type="tel" 
+                   jsf:id="Telefono"
+                   required="true"
+                   jsf:value="#{usuarioController.currentUsuario.telefono}"/>
+            <label>Sexo</label>
+            <select jsf:id="Sexo"
+                    size="1"
+                    required="true"
+                    jsf:value="#{usuarioController.currentUsuario.sexo}">
+                <f:selectItem itemLabel="Seleccione uno..."/>
+                <f:selectItem itemLabel="Masculino" itemValue="M"/>
+                <f:selectItem itemLabel="Femenino" itemValue="f"/>
+            </select>
+            <label>Fecha de ingreso</label>
+            <input type="date"
+                   jsf:id="FechaIngreso"
+                   required="true"
+                   jsf:value="#{usuarioController.currentUsuario.fechaIngreso}"/>
+            <f:convertDateTime pattern="yyyy-MM-dd"/>
+            <input type="submit" 
+                   value="Registrarse" 
+                   jsf:action="#{usuarioController.create}" />               
+        </form>
+    </body>
+      </ui:composition>
+</html>
