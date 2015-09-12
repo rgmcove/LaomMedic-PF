@@ -10,8 +10,8 @@ import com.example.laommedic.jsf.controllers.util.JsfUtil;
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
-import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.Basic;
@@ -119,7 +119,7 @@ public class Usuario implements Serializable {
                     referencedColumnName = "id_identificacion"),
             inverseJoinColumns = @JoinColumn(name = "id_roles",
                     referencedColumnName = "id_roles"))
-    private Collection<Rol> rol;//RELACION MUCHOS A MUCHOS USUARIOS-ROLES
+    private List<Rol> rol;//RELACION MUCHOS A MUCHOS USUARIOS-ROLES
     
     @ManyToMany
     @JoinTable(name = "OCUPACIONES_has_USUARIOS",
@@ -127,7 +127,7 @@ public class Usuario implements Serializable {
                     referencedColumnName = "id_identificacion"),
             inverseJoinColumns = @JoinColumn(name = "id_ocupacion",
                     referencedColumnName = "id_ocupacion"))
-    private Collection<Ocupacion> ocupacion;//RELACION MUCHOS A MUCHOS USUARIOS-OCUPACION
+    private List<Ocupacion> ocupacion;//RELACION MUCHOS A MUCHOS USUARIOS-OCUPACION
     
     @ManyToOne
     @JoinColumn(name = "id_tipo_documento")
@@ -278,19 +278,19 @@ public class Usuario implements Serializable {
         this.entidad = entidad;
     }
 
-    public Collection<Rol> getRol() {
+    public List<Rol> getRol() {
         return rol;
     }
 
-    public void setRol(Collection<Rol> rol) {
+    public void setRol(List<Rol> rol) {
         this.rol = rol;
     }
 
-    public Collection<Ocupacion> getOcupacion() {
+    public List<Ocupacion> getOcupacion() {
         return ocupacion;
     }
 
-    public void setOcupacion(Collection<Ocupacion> ocupacion) {
+    public void setOcupacion(List<Ocupacion> ocupacion) {
         this.ocupacion = ocupacion;
     }
 

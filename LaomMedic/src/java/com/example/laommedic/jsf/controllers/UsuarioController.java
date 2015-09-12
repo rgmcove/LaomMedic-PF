@@ -17,15 +17,16 @@ import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 import java.util.StringTokenizer;
+
 import javax.ejb.EJB;
-import javax.faces.view.ViewScoped;
-import javax.inject.Named;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 
 /**
  *
  * @author Rubén.Gómez
  */
-@Named
+@ManagedBean
 @ViewScoped
 public class UsuarioController implements Serializable {
 
@@ -36,8 +37,8 @@ public class UsuarioController implements Serializable {
     private int idCiudad;//Llave foranea
     private int idDepartamento;//Llave foranea
     private String idEntidad;//Llave foranea
-    private String idRol;
-    private String idOcupacion;
+    private List<Rol> idRol;
+    private List<Ocupacion> idOcupacion;
     private String idTipoDocumento;//Llave foranea
     private List<Usuario> itemsUsuario = null;
     
@@ -73,21 +74,22 @@ public class UsuarioController implements Serializable {
         this.idEntidad = idEntidad;
     }
 
-    public String getIdRol() {
+    public List<Rol> getIdRol() {
         return idRol;
     }
 
-    public void setIdRol(String idRol) {
+    public void setIdRol(List<Rol> idRol) {
         this.idRol = idRol;
     }
 
-    public String getIdOcupacion() {
+    public List<Ocupacion> getIdOcupacion() {
         return idOcupacion;
     }
 
-    public void setIdOcupacion(String idOcupacion) {
+    public void setIdOcupacion(List<Ocupacion> idOcupacion) {
         this.idOcupacion = idOcupacion;
     }
+
 
     public String getIdTipoDocumento() {
         return idTipoDocumento;
@@ -115,8 +117,8 @@ public class UsuarioController implements Serializable {
     public void create() {
         try {
             currentUsuario.setCiudad(new Ciudad(idCiudad, new Departamento(idDepartamento)));
-            currentUsuario.setRol((Collection<Rol>) new Rol(idRol));
-            currentUsuario.setOcupacion((Collection<Ocupacion>) new Ocupacion(idOcupacion));
+            currentUsuario.setRol(idRol);
+            currentUsuario.setOcupacion(idOcupacion);
             currentUsuario.setEntidad(new Entidad(idEntidad));
             currentUsuario.setTipoDocumento(new TipoDocumento(idTipoDocumento));
             getUsuarioSession().create(currentUsuario);

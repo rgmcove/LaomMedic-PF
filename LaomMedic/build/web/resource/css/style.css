@@ -110,3 +110,85 @@ a{
 
 }
 
+.crearCita{
+        border-radius: 2em;
+	color: black;
+	padding: .4em 2em;
+	text-decoration: none;
+	overflow: hidden;
+	margin-bottom: 11em;
+	display: inline-block;
+        background: silver;
+        font-size: 20px;
+        text-align: center;
+        display: inline-block;
+    
+}
+.confirmarCita{
+
+        border-radius: 2em;
+	color: black;
+	padding: .5em 1em;
+	text-decoration: none;
+	overflow: hidden;
+	margin-bottom: 5em;
+	display: inline-block;
+        background: silver;
+        font-size: 20px;
+        text-align: center;
+        display: inline-block;
+    }
+
+.modificarCita{
+        border-radius: 2em;
+	color: black;
+	padding: .5em 1em;
+	text-decoration: none;
+	overflow: hidden;
+	margin-bottom: 10em;
+	display: inline-block;
+        background: silver;
+        font-size: 20px;
+        text-align: center;
+        display: inline-block;
+        margin-left:30em;
+}
+.cerrarSesion{
+        border-radius: 2em;
+	color: black;
+	
+        padding: .5em 1em;
+	text-decoration: none;
+	margin-top: -7em;
+	overflow: hidden;
+	margin-bottom: .2em;
+	display: inline-block;
+        background: silver;
+        font-size: 20px;
+        text-align: center;
+        float: right;
+        display: inline-block;
+        margin-top: -4em;
+}
+.interfazPaciente{
+    height: 300px;
+    
+}
+
+
+
+@media screen and (max-width:768px){//Tablets en modo Vertical - Celular en modo Horizontal
+    
+    .Gallery{
+        
+        display: none;
+    }
+   
+}
+@media screen and (max-width:1024px){//Tablets en modo Horizontal - Celular en modo Vertical
+    .Gallery{
+        display: none;
+    }
+}
+
+

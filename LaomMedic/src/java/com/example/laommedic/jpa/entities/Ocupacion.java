@@ -6,7 +6,7 @@
 package com.example.laommedic.jpa.entities;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.List;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -36,7 +36,7 @@ public class Ocupacion implements Serializable {
     private String nombreOcupacion;
     
     @ManyToMany(mappedBy= "ocupacion")//Relacion de muchos a muchos con la Tabla "Usuarios"
-    private Collection<Usuario> usuarios;
+    private List<Usuario> usuarios;
 
     public Ocupacion() {//CONSTRUCTOR
     }
@@ -61,11 +61,11 @@ public class Ocupacion implements Serializable {
         this.nombreOcupacion = nombreOcupacion;
     }
 
-    public Collection<Usuario> getUsuarios() {
+    public List<Usuario> getUsuarios() {
         return usuarios;
     }
 
-    public void setUsuarios(Collection<Usuario> usuarios) {
+    public void setUsuarios(List<Usuario> usuarios) {
         this.usuarios = usuarios;
     }
     

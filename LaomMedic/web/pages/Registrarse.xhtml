@@ -74,7 +74,7 @@
                    required="true"
                    jsf:value="#{usuarioController.currentUsuario.email}"/>
             <label>Password</label>
-            <input type="text" 
+            <input type="password" 
                    jsf:id="Password"
                    required="true"
                    jsf:value="#{usuarioController.currentUsuario.password}"/>
@@ -95,7 +95,7 @@
                     jsf:value="#{usuarioController.currentUsuario.sexo}">
                 <f:selectItem itemLabel="Seleccione uno..."/>
                 <f:selectItem itemLabel="Masculino" itemValue="M"/>
-                <f:selectItem itemLabel="Femenino" itemValue="f"/>
+                <f:selectItem itemLabel="Femenino" itemValue="F"/>
             </select>
             <label>Fecha de ingreso</label>
             <input type="date"
@@ -150,8 +150,7 @@
                                    itemValue="#{ocupacion.idOcupacion}"/>
                 </select>
             <button type="submit"
-                    jsf:action="List"
-                    jsf:actionListener="#{usuarioController.create()}">
+                    jsf:action="#{usuarioController.create()}">
                 Registrar
             </button>    
         </form>

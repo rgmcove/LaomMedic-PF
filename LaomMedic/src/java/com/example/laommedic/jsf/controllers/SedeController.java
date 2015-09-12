@@ -10,8 +10,9 @@ import com.example.laommedic.jpa.sessions.SedeSession;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
-import javax.faces.view.ViewScoped;
-import javax.inject.Named;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
 
 
 
@@ -19,7 +20,7 @@ import javax.inject.Named;
  *
  * @author Rubén.Gómez
  */
-@Named
+@ManagedBean
 @ViewScoped
 public class SedeController implements Serializable {
 

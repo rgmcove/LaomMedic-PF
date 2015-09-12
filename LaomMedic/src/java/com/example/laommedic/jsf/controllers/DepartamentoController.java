@@ -10,14 +10,15 @@ import com.example.laommedic.jpa.sessions.DepartamentoSession;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
-import javax.faces.view.ViewScoped;
-import javax.inject.Named;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+
 
 /**
  *
  * @author Rubén.Gómez
  */
-@Named
+@ManagedBean
 @ViewScoped
 public class DepartamentoController implements Serializable {
 
