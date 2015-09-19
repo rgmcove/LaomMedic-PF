@@ -1,29 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE sun-web-app PUBLIC "-//Sun Microsystems, Inc.//DTD GlassFish Application Server 3.0 Servlet 3.0//EN" "http://www.sun.com/software/appserver/dtds/sun-web-app_3_0-0.dtd">
 <sun-web-app error-url="">
-  <security-role-mapping>
-    <role-name>webRoot</role-name>
-    <group-name>ROOT </group-name>
-  </security-role-mapping>
-  <security-role-mapping>
-    <role-name>webAdmin</role-name>
-    <group-name>ADMIN</group-name>
-  </security-role-mapping>
-  <security-role-mapping>
-    <role-name>webRecep</role-name>
-    <group-name>RECEP</group-name>
-  </security-role-mapping>
-  <security-role-mapping>
-    <role-name>webFisio</role-name>
-    <group-name>FISIO</group-name>
-  </security-role-mapping>
-  <security-role-mapping>
-    <role-name>webUser</role-name>
-    <group-name>USER</group-name>
-  </security-role-mapping>
-  <servlet>
-    <servlet-name>Faces Servlet</servlet-name>
-  </servlet>
   <class-loader delegate="true"/>
   <jsp-config>
     <property name="keepgenerated" value="true">
@@ -31,3 +8,4 @@
     </property>
   </jsp-config>
 </sun-web-app>
+

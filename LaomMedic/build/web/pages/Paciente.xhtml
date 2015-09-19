@@ -12,17 +12,20 @@ and open the template in the editor.
          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <title>Paciente</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-         <ui:composition template="../WEB-INF/Template.xhtml">
+        <link rel="stylesheet" href="../resource/css/style.css"></link>
     </head>
+     <ui:composition template="../WEB-INF/Template.xhtml">
     <body> 
+        <ui:define name="content">
         <section class="interfazPaciente">
             <ul class="interfazItems">
-                <li class="crearCita"><a jsf:outcome="pages/CrearCita.xhtml">Crear cita</a></li>  
-                <li class="confirmarCita"><a jsf:outcome="pages/Confirmar cita">Confirmar cita</a></li>
-                <li class="modificarCita"><a jsf:outcome="pages/Modifacar/Eliminar">Modificar/Eliminar cita</a></li>
-                <li class="cerrarSesion"><a jsf:outcome="pages/index.xhtml">Cerrar sesión</a></li>
+                <li class="crearCita"><a jsf:outcome="CrearCita.xhtml">Crear cita</a></li>  
+                <li class="confirmarCita">Confirmar cita</li>
+                <li class="modificarCita">Modificar/ Eliminar cita</li>
+                <li class="cerrarSesion">Cerrar sesión</li>
             </ul>         
         </section>
+        </ui:define>
     </body>
     </ui:composition>
 </html>

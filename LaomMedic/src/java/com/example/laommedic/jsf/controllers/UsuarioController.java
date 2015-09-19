@@ -8,13 +8,12 @@ package com.example.laommedic.jsf.controllers;
 import com.example.laommedic.jpa.entities.Ciudad;
 import com.example.laommedic.jpa.entities.Departamento;
 import com.example.laommedic.jpa.entities.Entidad;
-import com.example.laommedic.jpa.entities.Ocupacion;
 import com.example.laommedic.jpa.entities.Rol;
 import com.example.laommedic.jpa.entities.TipoDocumento;
 import com.example.laommedic.jpa.entities.Usuario;
 import com.example.laommedic.jpa.sessions.UsuarioSession;
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -37,8 +36,6 @@ public class UsuarioController implements Serializable {
     private int idCiudad;//Llave foranea
     private int idDepartamento;//Llave foranea
     private String idEntidad;//Llave foranea
-    private List<Rol> idRol;
-    private List<Ocupacion> idOcupacion;
     private String idTipoDocumento;//Llave foranea
     private List<Usuario> itemsUsuario = null;
     
@@ -73,24 +70,7 @@ public class UsuarioController implements Serializable {
     public void setIdEntidad(String idEntidad) {
         this.idEntidad = idEntidad;
     }
-
-    public List<Rol> getIdRol() {
-        return idRol;
-    }
-
-    public void setIdRol(List<Rol> idRol) {
-        this.idRol = idRol;
-    }
-
-    public List<Ocupacion> getIdOcupacion() {
-        return idOcupacion;
-    }
-
-    public void setIdOcupacion(List<Ocupacion> idOcupacion) {
-        this.idOcupacion = idOcupacion;
-    }
-
-
+    
     public String getIdTipoDocumento() {
         return idTipoDocumento;
     }
@@ -117,11 +97,12 @@ public class UsuarioController implements Serializable {
     public void create() {
         try {
             currentUsuario.setCiudad(new Ciudad(idCiudad, new Departamento(idDepartamento)));
-            currentUsuario.setRol(idRol);
-            currentUsuario.setOcupacion(idOcupacion);
             currentUsuario.setEntidad(new Entidad(idEntidad));
             currentUsuario.setTipoDocumento(new TipoDocumento(idTipoDocumento));
+            currentUsuario.setRol(new ArrayList<>());
+            currentUsuario.getRol().add(new Rol("USR"));
             getUsuarioSession().create(currentUsuario);
+            currentUsuario = new Usuario();
         } catch (Exception ex) {
             System.err.println(ex.getMessage());
         }

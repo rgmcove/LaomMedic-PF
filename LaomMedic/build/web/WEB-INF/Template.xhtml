@@ -2,29 +2,28 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <link rel="stylesheet"  href="#{request.contextPath}/resource/css/normalize.css"></link>
         <link rel="stylesheet"  href="#{request.contextPath}/resource/css/style.css"></link>
-        <title>Facelets Template</title>
+         <ui:insert name="title"></ui:insert>
     </h:head>
 
     <h:body>
 
         <div id="top">  
               <header class="header">
-            <figure class="ImageContainer">
+                  <a jsf:outcome="/index.xhtml">
                 <img class="Image" src="#{request.contextPath}/resource/image/logo.png" width="300px" height="150px" alt="logo"></img>
-            </figure>
+                </a>
         </header>
         </div>
-
         <div id="content" class="center_content">
-            <ui:insert name="content">Content</ui:insert>
+            <ui:insert name="content"></ui:insert>
         </div>
-
         <div id="bottom">
            
                  <footer class="footer">
@@ -43,12 +42,7 @@
                     </figure>
                 </div>
     
-                 <form action="" class="Footer-form">
-                <input type="text" placeholder="Nombre" class="Footer-formInput"/>
-                <input type="email" placeholder="Email" class="Footer-formInput"/>
-                <textarea placeholder="Motivo" class="Footer-textArea"></textarea>
-                <button type="submit" class="Footer-button">Contactanos</button>
-            </form>           
+               
 
            
         </footer>

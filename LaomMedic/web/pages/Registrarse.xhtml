@@ -4,127 +4,140 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:jsf="http://xmlns.jcp.org/jsf"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
       <ui:composition template="../WEB-INF/Template.xhtml">
          
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <ui:define name="title">
         <title>Registrarse</title>
+        </ui:define>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        
+        <link rel="stylesheet" href="../resource/css/style.css"></link>
     </head>
    
     <body>
         <ui:define name="content">
-            <form  autocomplete="on" class="form-re">
-            <label>Primer Nombre</label>
+            <h:form   class="form-re">
+                <h:messages></h:messages>
+          
             <input type="text"
-                   jsf:id="PrimerNombre"
+                   placeholder="Primer Nombre"
+                   class="PrimerNombre"
                    required="true"
                    jsf:value="#{usuarioController.currentUsuario.primerNombre}"/>
-            <label>Segundo Nombre</label>
+            
             <input type="text"
-                   jsf:id="SegundoNombre"
+                   placeholder="Segundo Nombre"
+                   class="SegundoNombre"
                    required="false"
                    jsf:value="#{usuarioController.currentUsuario.segundoNombre}"/>
-            <label>Primer Apellido</label>
+            
             <input type="text"
-                   jsf:id="PrimerApellido"
+                   placeholder="Primer Apellido"
+                   class="PrimerApellido"
                    required="true"
                    jsf:value="#{usuarioController.currentUsuario.primerApellido}"/>
-            <label>Segundo Apellido</label>
+            
              <input type="text"
-                   jsf:id="SegundoApellido"
+                    placeholder="Segundo Apellido"
+                   class="SegundoApellido"
                    required="false"
                    jsf:value="#{usuarioController.currentUsuario.segundoApellido}"/>
-             <label>Documento de identidad</label>
+           
             <input type="number" 
-                   jsf:id="idIdentificacion"
-                   required="#{usuarioController.currentUsuario.idIdentificacion}"/>
-            <label>Fecha de nacimiento</label>
+                   placeholder="Documento de identidad"
+                   class="idIdentificacion"
+                   required="true"
+                   jsf:value="#{usuarioController.currentUsuario.idIdentificacion}"/>
+            <br/>
+            <label class="fecha-na">Fecha de nacimiento</label>
+            <br/>
             <input type="date" 
-                   jsf:id="FechaNacimiento"
+                   class="FechaNacimiento"
                    required="true"
                    jsf:value="#{usuarioController.currentUsuario.fechaNacimiento}">
             <f:convertDateTime pattern="yyyy-MM-dd"/>
             </input>
-            <label>Grupo sanguineo</label>
-            <select jsf:id="grupoSanguineo"
+            <br/>
+            <select class="grupoSanguineo"
+                    
                     size="1"
                     required="true"
                     jsf:value="#{usuarioController.currentUsuario.grupoSanguineo}">
-                <f:selectItem itemValue="Seleccione uno..."/>
+                <f:selectItem itemValue="Grupo Sanguineo"/>
                 <f:selectItem itemValue="A"/>
                 <f:selectItem itemValue="B"/>
                 <f:selectItem itemValue="AB"/>
                 <f:selectItem itemValue="O"/>
             </select>
-            <label>RH</label>
-            <select jsf:id="rh"
+            <br/>
+            <select class="rh"
                     size="1"
                     required="true"
                     jsf:value="#{usuarioController.currentUsuario.rh}">
-                  <f:selectItem itemValue="Seleccione uno..."/>
-                  <f:selectItem itemValue="Positivo" itemLabel="+"/>
-                  <f:selectItem itemValue="Negativo" itemLabel="-"/>
+                  <f:selectItem itemValue="RH"/>
+                  <f:selectItem itemValue="Pstvo" itemLabel="+"/>
+                  <f:selectItem itemValue="Ngtvo" itemLabel="-"/>
             </select>
-            <label>Email</label>
+            <br/>
             <input type="email" 
-                   jsf:id="Email"
+                   placeholder="Email"
+                   class="Email"
                    required="true"
                    jsf:value="#{usuarioController.currentUsuario.email}"/>
-            <label>Password</label>
+            
             <input type="password" 
-                   jsf:id="Password"
+                   placeholder="Password"
+                   class="Password"
                    required="true"
                    jsf:value="#{usuarioController.currentUsuario.password}"/>
-            <label>Dirección</label>
-            <input type="text" 
-                   jsf:id="Direccion"
+           
+            <input type="text"
+                   placeholder="Dirección"
+                   class="Direccion"
                    required="true"
                    jsf:value="#{usuarioController.currentUsuario.direccion}"/>
-            <label>Telefono</label>
+           
             <input type="tel" 
-                   jsf:id="Telefono"
+                   placeholder="Telefono"
+                   class="Telefono"
                    required="true"
                    jsf:value="#{usuarioController.currentUsuario.telefono}"/>
-            <label>Sexo</label>
-            <select jsf:id="Sexo"
+          <br/>
+            <select class="Sexo"
                     size="1"
                     required="true"
                     jsf:value="#{usuarioController.currentUsuario.sexo}">
-                <f:selectItem itemLabel="Seleccione uno..."/>
+                <f:selectItem itemLabel="Sexo"/>
                 <f:selectItem itemLabel="Masculino" itemValue="M"/>
                 <f:selectItem itemLabel="Femenino" itemValue="F"/>
             </select>
-            <label>Fecha de ingreso</label>
+            <br/>
+            <label class="fecha-in">Fecha de ingreso</label>
+            <br/>
             <input type="date"
-                   jsf:id="FechaIngreso"
+                   class="FechaIngreso"
                    required="true"
                    jsf:value="#{usuarioController.currentUsuario.fechaIngreso}">
             <f:convertDateTime pattern="yyyy-MM-dd"/>
             </input>
             <select jsf:value="#{usuarioController.ciudad}"
                     required="true"
-                    size="1">
+                    size="1"
+                    class="Ciudad">
                 <f:selectItem itemLabel="Ciudad"/>
                 <f:selectItems value="#{ciudadController.itemsCiudad}"
                                var="ciudad"
                                itemLabel="#{ciudad.nombre}"
                                itemValue="#{ciudad.idCiudad},#{ciudad.departamento.idDepartamento}"/>
             </select>
-            <select jsf:value="#{usuarioController.idRol}"
-                        required="true"
-                        size="1">
-                    <f:selectItem itemLabel="Rol"/>
-                    <f:selectItems value="#{rolController.itemsRol}"
-                                   var="rol"
-                                   itemLabel="#{rol.nombreRol}"
-                                   itemValue="#{rol.idRoles}"/>
-                </select>
+           
             <select jsf:value="#{usuarioController.idEntidad}"
                         required="true"
-                        size="1">
+                        size="1"
+                        class="Entidad">
                     <f:selectItem itemLabel="Entidad"/>
                     <f:selectItems value="#{entidadController.ittemsEntidad}"
                                    var="entidad"
@@ -133,27 +146,20 @@
             </select>
             <select jsf:value="#{usuarioController.idTipoDocumento}"
                         required="true"
-                        size="1">
+                        size="1"
+                        class="TipoDocumento">
                     <f:selectItem itemLabel="Tipo Documento"/>
                     <f:selectItems value="#{tipoDocumentoController.itemsTipoDocumento}"
                                    var="tipoDocumento"
                                    itemLabel="#{tipoDocumento.nombre}"
                                    itemValue="#{tipoDocumento.idTipoDocumento}"/>
             </select>
-            <select jsf:value="#{usuarioController.idOcupacion}"
-                        required="true"
-                        size="1">
-                    <f:selectItem itemLabel="Ocupacion"/>
-                    <f:selectItems value="#{ocupacionController.itemsOcupacion}"
-                                   var="ocupacion"
-                                   itemLabel="#{ocupacion.nombreOcupacion}"
-                                   itemValue="#{ocupacion.idOcupacion}"/>
-                </select>
-            <button type="submit"
+            <br/>
+            <button type="submit" class="Registrar"
                     jsf:action="#{usuarioController.create()}">
                 Registrar
             </button>    
-        </form>
+        </h:form>
             </ui:define> 
     </body>
       </ui:composition>

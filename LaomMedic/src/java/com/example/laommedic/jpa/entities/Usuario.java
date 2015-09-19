@@ -14,7 +14,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -23,9 +22,11 @@ import javax.persistence.JoinColumns;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 /**
@@ -38,66 +39,62 @@ public class Usuario implements Serializable {
     
     @Id
     @Column(name = "id_identificacion")
-    @Basic(optional = false)
+    @NotNull
     private long idIdentificacion;
     
     @Size(max =25)
     @Column(name = "primer_nombre")
-    @Basic(optional = false)
+    @NotNull
     private String primerNombre;
     
     @Size(max =25)
     @Column(name= "segundo_nombre")
-    @Basic(optional = true)
     private String segundoNombre;
     
     @Column(name = "primer_apellido")
     @Size(max =25)
-    @Basic(optional = false)
+    @NotNull
     private String primerApellido;
     
     @Column(name = "segundo_apellido")
     @Size(max =25)
-    @Basic(optional = true)
     private String segundoApellido;
     
     @Column(name = "fecha_nacimiento")
-    @Basic(optional = false)
+    @NotNull
     @Temporal(TemporalType.DATE)
     private Date fechaNacimiento;
     
     @Column(name = "grupo_sanguineo")
-    @Size(max =2)
-    @Basic(optional = false)
+    @NotNull
     private char grupoSanguineo;
     
-    @Column(name = "rh")
     @Size(max =5)
-    @Basic(optional = false)
+    @NotNull
     private String rh;
     
     @Size(max =30)
-    @Basic(optional = false)
+    @NotNull
     private String email;
     
     @Size(min =8, max =200)
-    @Basic(optional = false)
+    @NotNull
     private String password;
     
     @Size(max =30)
-    @Basic(optional = false)
+    @NotNull
     private String direccion;
     
     @Size(max =15)
-    @Basic(optional = false)
+    @NotNull
     private String telefono;
     
     @Size(max =15)
-    @Basic(optional = false)
+    @NotNull
     private String sexo;
     
     @Column(name = "fecha_ingreso")
-    @Basic(optional = false)
+    @NotNull
     @Temporal(TemporalType.DATE)
     private Date fechaIngreso;
     
@@ -129,7 +126,7 @@ public class Usuario implements Serializable {
                     referencedColumnName = "id_ocupacion"))
     private List<Ocupacion> ocupacion;//RELACION MUCHOS A MUCHOS USUARIOS-OCUPACION
     
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "id_tipo_documento")
     private TipoDocumento tipoDocumento;
 

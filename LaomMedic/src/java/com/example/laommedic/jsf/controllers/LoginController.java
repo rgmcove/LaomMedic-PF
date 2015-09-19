@@ -27,18 +27,18 @@ import javax.servlet.http.HttpSession;
 public class LoginController implements Serializable {
 
     private static final Logger log = Logger.getLogger(LoginController.class.getName());
-    private String identificacion;
+    private String email;
     private String password;
     
     public LoginController() {
     }
 
-    public String getIdentificacion() {
-        return identificacion;
+    public String getEmail() {
+        return email;
     }
 
-    public void setIdentificacion(String identificacion) {
-        this.identificacion = identificacion;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
@@ -71,15 +71,15 @@ public class LoginController implements Serializable {
     public String login() {
         try {
             //Login via the Servlet Context
-            getRequest().login(identificacion, password);
+            getRequest().login(email, password);
 
             limpiar();
 
             //Redirigir a la página de portada
-            return "/login";
+            return "/Paciente.xhtml";
         } catch (ServletException ex) {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Identificación o Contraseña Invalida", null));
-            return "/index";
+            return "/login.xhtml";
         }
     }
 
@@ -92,15 +92,15 @@ public class LoginController implements Serializable {
             HttpSession session = (HttpSession) FacesContext.getCurrentInstance().getExternalContext().getSession(false);
             session.invalidate();
             limpiar();
-            return "/login";
+            return "/login.xhtml";
         } catch (ServletException e) {
             log.log(Level.SEVERE, "Failed to logout user!", e);
-            return "/login";
+            return "/login.xhtml";
         }
     }
 
     private void limpiar() {
-        identificacion = "";
+        email = "";
         password = "";
     }
     

@@ -1,5 +1,6 @@
 body{
   background-color: bisque;
+  margin-bottom: 0; 
 }
 .header {
     background-image:url(../image/header.jpg);
@@ -11,11 +12,11 @@ body{
     padding: 1.2em;
     text-align: center;   
 }
-.Gallery{
+
+
+.Gallery{  
     width: 700px;
     height: 350px;
-    background-size: 400px 200px;
-    background-repeat: no-repeat;
     margin:auto;
     animation-name: gal;
     -webkit-animation-name: gal;
@@ -111,84 +112,139 @@ a{
 }
 
 .crearCita{
-        border-radius: 2em;
+        border-radius: 1em;
 	color: black;
+        overflow: hidden;
 	padding: .4em 2em;
 	text-decoration: none;
-	overflow: hidden;
-	margin-bottom: 11em;
+	margin-bottom: 7em;
 	display: inline-block;
         background: silver;
-        font-size: 20px;
+        font-size: 40px;
         text-align: center;
         display: inline-block;
     
 }
 .confirmarCita{
 
-        border-radius: 2em;
-	color: black;
+        border-radius: 1em;
+	color: darkcyan;
 	padding: .5em 1em;
 	text-decoration: none;
-	overflow: hidden;
-	margin-bottom: 5em;
+	margin-bottom: 4em;
 	display: inline-block;
         background: silver;
-        font-size: 20px;
+        font-size: 40px;
         text-align: center;
         display: inline-block;
     }
 
 .modificarCita{
-        border-radius: 2em;
-	color: black;
+        border-radius: 1em;
+	color: aqua;
 	padding: .5em 1em;
 	text-decoration: none;
 	overflow: hidden;
-	margin-bottom: 10em;
+	margin-bottom: 7em;
 	display: inline-block;
         background: silver;
-        font-size: 20px;
+        font-size: 40px;
         text-align: center;
-        display: inline-block;
-        margin-left:30em;
+        
+       
 }
 .cerrarSesion{
-        border-radius: 2em;
-	color: black;
-	
+        border-radius: 1em;
+	color: #3333cc;
         padding: .5em 1em;
 	text-decoration: none;
 	margin-top: -7em;
-	overflow: hidden;
 	margin-bottom: .2em;
 	display: inline-block;
         background: silver;
-        font-size: 20px;
-        text-align: center;
-        float: right;
-        display: inline-block;
+        font-size: 40px;
+        text-align: center; 
         margin-top: -4em;
 }
-.interfazPaciente{
-    height: 300px;
-    
+#content{
+    max-width: 30em;
+    display: inline-block;
+    margin: 10% 30% 10% 38%;
+    padding: 1em;
+}.form-re{
+    background:  blueviolet;
+    border-radius: 2em;
+    max-width: 20em;
+    padding: 10px;
+    border: 5px black solid;
+}
+.rh, .idIdentificacion, .grupoSanguineo, .TipoDocumento, .Telefono, .Sexo, .SegundoNombre, .fecha-in, .fecha-na, .SegundoApellido, .PrimerNombre, .PrimerApellido, .Password, .FechaNacimiento, .FechaIngreso, .Entidad, .Email, .Direccion, .Ciudad{
+    margin: 10px
+}
+
+.Registrar{
+    margin: 1% 30% 1% 37%;
 }
 
 
 
-@media screen and (max-width:768px){//Tablets en modo Vertical - Celular en modo Horizontal
+#loginForm{
+    text-align: center;
+    display: inline-block;
+    border-radius: 1em;
+    background: goldenrod;
+    max-width: 20em;
+   
     
+}
+.Correo, .Contraseña, .Ingresar{
+    margin: 24px;
+}
+
+@media screen and (max-width: 700px){
     .Gallery{
-        
         display: none;
+    }
+    .Image{
+        width: 100px;
+        height: 50px;
+        float: left;
+    }
+    .Work-image{
+        display: none;
+    }
+    .footer{
+        height: 150px
+    }
+    .lateral-2{
+        margin-left: 3em
+            
+    }
+  
+     #content{
+        margin:  5% 10% 5% 20%;
+      }
+    
+    .form-re{
+        text-align: center;
     }
    
-}
-@media screen and (max-width:1024px){//Tablets en modo Horizontal - Celular en modo Vertical
-    .Gallery{
-        display: none;
+}  
+
+@media screen and (max-width: 400px ){
+    
+    #content{
+       padding: 1em 5px 1em 5px;
+       
     }
+    
+    #loginForm{
+        margin: 1em;
+        
+    } 
+    
+      #content{
+        margin: 0;
+      }
+      
 }
-
-

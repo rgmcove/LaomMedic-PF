@@ -1,33 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:jsf="http://xmlns.jcp.org/jsf">
-    <h:head>
-        <title>Laom Medic</title>
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <head>
+         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </h:head>
-    <h:body>
+        <link rel="stylesheet" href="resource/css/style.css"></link>
+         <ui:define name="title">
+        <title>Login</title>
+        </ui:define>
+    </head>
+    <ui:composition template="WEB-INF/Template.xhtml">
+    <body>
+        <ui:define name="content">
         <form jsf:id="loginForm">
-            <input type="number"
-                   placeholder="N° Identificacion"
+            <p:messages/>
+            <input type="text" class="Correo"
+                   placeholder="Correo Electronico"                
                    required="true"
-                   jsf:value="#{loginController.identificacion}">
+                   jsf:value="#{loginController.email}">
             </input>
-            <input type="password"
+            <input type="password" class="Contraseña"
                    placeholder="Contraseña"
                    required="true"
                    jsf:value="#{loginController.password}">
             </input>
-            <button type="submit" 
+            <button type="submit" class="Ingresar"
                     jsf:action="#{loginController.login}">
                 Ingresar
             </button>
         </form>
         <script type="text/javascript">
             if (#{loginController.authenticated}) {
-                window.location = "#{request.contextPath}/faces/index.xhtml";
+                window.location = "#{request.contextPath}/pages/Paciente.xhtml";
             }
         </script>
-    </h:body>
+        </ui:define>
+    </body>
+    </ui:composition>
 </html>
